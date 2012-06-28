@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_URI'] == "/latest.iso"){
 
 	foreach($_SERVER as $key => $value) {
 			if(strpos($key, 'GEOIP_') === 0) {
-				$geo = $geo . $value;
+				$geo = $geo . $value . " ";
 			}
 	}
 
