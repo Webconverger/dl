@@ -1,34 +1,17 @@
 #!/bin/bash
-# https://developers.google.com/chart/interactive/docs/gallery/annotatedtimeline
-# JSON syntax https://developers.google.com/chart/interactive/docs/reference#dataparam
-# TIP: DataTable.toJSON() to understand syntax better
 
-cat <<HEAD
-{ "cols" :
-[
-{ "id" : "date", "label" : "Date", "type" : "date" },
-{ "id" : "dl", "label" : "Downloads", "type" : "number" }
-],
-"rows" :
-[
-HEAD
+echo '['
 
-# Order shouldn't matter
 for i in *.txt
 do
 
-	d=$(basename $i -count.txt | tr - ' ')
-	set -- $d # Old school parsing
-	d=$1,$(( $2 - 1)),$3
+	d=$(basename $i -count.txt)
 	n=$(cat $i | sort | uniq | wc -l)
 
+# TODO how do you remove last trailling comma so the JSON is 100%?
 cat <<END
-{ "c" : [ { "v" : "Date($d)" }, { "v" : $n } ] },
+{ "period" : "$d", "dl" : $n },
 END
 done
 
-cat <<FOOT
-]
-}
-FOOT
-
+echo ']'

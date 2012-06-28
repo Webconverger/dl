@@ -1,18 +1,7 @@
 # Bits related to serving Webconverger downloads
 
 * index.php - el cheapo CDN based on libapache2-mod-geoip
-* [stats/](http://dl.webconverger.com/stats) based on Google's Flash [Annotated time line](https://developers.google.com/chart/interactive/docs/gallery/annotatedtimeline)
-
-Still seeking a time line library that doesn't suck
-
-1. Not flash, [HTML](http://www.whatwg.org/html)
-2. Treats dates as native Javascript object, e.g. `Date(2012,5,3)`
-3. Able to do totals if more than one value given on the Y-axis
-4. Able to turn off/on values on the Y-axis
-
-Candidates:
-
-* http://oesmith.github.com/morris.js
+* [stats/](http://dl.webconverger.com/stats) based on [Morris.js](http://oesmith.github.com/morris.js/)
 
 # cron
 
@@ -22,7 +11,7 @@ Candidates:
 
 Use backport of [geoip-database](http://as.archive.progress-linux.org/progress/pool/contrib/g/geoip-database-contrib/)
 
-More information about the [servers](http://webconverger.org/servers/)
+More information about the [Webconverger download servers](http://webconverger.org/servers/).
 
 	<VirtualHost *:80>
 	ServerName dl.webconverger.com

@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
 <head>
-<script src="https://www.google.com/jsapi"></script>
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="raphael-min.js"></script>
+<script src="morris.min.js"></script>
 <title>Webconverger download statistics</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<style>
+html, body {font-family: 'Open Sans', sans-serif;}
+</style>
 </head>
 <body>
-<!-- sucks how A) this is flash B) you have to specify size up front -->
-<div id="chart_div" style="width:640px; height: 480px; "></div>
-<p><a href="https://github.com/Webconverger/dl">Github</a></p>
+<h1>Webconverger download statistics</h1>
+<div id="graph"></div>
+<script>
+
+var jsonData = $.ajax({
+	url: "/data.json",
+	dataType: "json",
+	async: false
+}).responseText;
+
+Morris.Line({
+  element: 'graph',
+  data: JSON.parse(jsonData),
+  xkey: 'period',
+  ykeys: ['dl'],
+  labels: ['Downloads'],
+  dateFormat: function (x) { return new Date(x).toDateString(); }
+});
+</script>
 </body>
-</html>
