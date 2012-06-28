@@ -8,7 +8,7 @@ google.setOnLoadCallback(drawChart);
 
 function drawChart() {
 	var jsonData = $.ajax({
-		url: "/sample.json",
+		url: "/data.json",
 		dataType: "json",
 		async: false
 	}).responseText;
@@ -21,4 +21,3 @@ var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('
 chart.draw(data, {width: 640, height: 480});
 
 }
-
