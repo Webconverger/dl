@@ -1,4 +1,5 @@
 #!/bin/bash
+# With thanks to Daniel Mills, e36freak on #bash
 
 echo '['
 
