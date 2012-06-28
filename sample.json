@@ -1,60 +1,27 @@
-{
-    "cols": [
-        {
-            "id": "date",
-            "label": "Date",
-            "type": "date"
-        },
-        {
-            "id": "soldpencils",
-            "label": "Sold Pencils",
-            "type": "number"
-        },
-        {
-            "id": "soldpens",
-            "label": "Sold Pens",
-            "type": "number"
-        }
+{ "cols" : [ { "id" : "date",
+        "label" : "Date",
+        "type" : "date"
+      },
+      { "id" : "soldpencils",
+        "label" : "Sold Pencils",
+        "type" : "number"
+      },
+      { "id" : "soldpens",
+        "label" : "Sold Pens",
+        "type" : "number"
+      }
     ],
-    "rows": [
-        {
-            "c": [
-                {
-                    "v": "Date(2008, 1 ,1)"
-                },
-                {
-                    "v": 30000
-                },
-                {
-                    "v": 40645
-                }
-            ]
-        },
-        {
-            "c": [
-                {
-                    "v": "Date(2008, 2 ,1)"
-                },
-                {
-                    "v": 14045
-                },
-                {
-                    "v": 20374
-                }
-            ]
-        },
-        {
-            "c": [
-                {
-                    "v": "Date(2008, 3 ,1)"
-                },
-                {
-                    "v": 55022
-                },
-                {
-                    "v": 50766
-                }
-            ]
-        }
+  "rows" : [ { "c" : [ { "v" : "Date(2008, 1 ,1)" },
+            { "v" : 30000 },
+            { "v" : 40645 }
+          ] },
+      { "c" : [ { "v" : "Date(2008, 2 ,1)" },
+            { "v" : 14045 },
+            { "v" : 20374 }
+          ] },
+      { "c" : [ { "v" : "Date(2008, 3 ,1)" },
+            { "v" : 55022 },
+            { "v" : 50766 }
+          ] }
     ]
 }
