@@ -2,15 +2,20 @@
 
 echo '['
 
-for i in *.txt
-do
+files=(./*.txt)
+tot=${#files[@]}
 
-	d=$(basename $i -count.txt)
-	n=$(cat $i | sort | uniq | wc -l)
+for ((i=0; i<tot; i++)); do
+  d=$(basename "${files[i]}" -count.txt)
+  n=$(sort -u "${files[i]}" | wc -l)
 
-cat <<END
-{ "period" : "$d", "dl" : $n },
-END
+  printf '{ "period" : "%s", "dl" : %s }' "$d" "$n"
+  # print comma for all lines except last
+  if ((i == tot - 1)); then
+    echo
+  else
+    echo ,
+  fi
 done
 
-echo '{}]' # <- suckless approach, add empty set
+echo ']'
