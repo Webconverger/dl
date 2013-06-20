@@ -21,7 +21,7 @@ switch ( $_SERVER["GEOIP_CONTINENT_CODE"] ) {
 		break;
 	case 'AF':
 	case 'EU':
-		header ("Location: https://s3-eu-west-1.amazonaws.com/eu-mirror/webc-20.0.iso" );
+		header ("Location: http://eu.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
 		break;
 	case 'NA':
 	default:
