@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_URI'] == "/latest.iso"){
 }
 
 switch ( $_SERVER["GEOIP_CONTINENT_CODE"] ) {
-	case 'AS':
-		header ("Location: http://as.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
-		break;
+	 case 'AS':
+	 	header ("Location: http://as.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
+	 	break;
 	case 'AF':
 	case 'EU':
 		header ("Location: http://eu.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
