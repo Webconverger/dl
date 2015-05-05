@@ -1,9 +1,9 @@
 <?php
 
-if ($_SERVER['REQUEST_URI'] == "/latest.iso"){
+$latest = "/webc-28.0.iso";
+
 
 	$geo = "";
-
 	foreach($_SERVER as $key => $value) {
 			if(strpos($key, 'GEOIP_') === 0) {
 				$geo = $geo . $value . " ";
@@ -13,19 +13,18 @@ if ($_SERVER['REQUEST_URI'] == "/latest.iso"){
 	$fp = fopen(date('Y-m-d') . "-count.txt", 'a');
 	fwrite($fp, $geo . "\n");
 	fclose($fp);
-}
 
 switch ( $_SERVER["GEOIP_CONTINENT_CODE"] ) {
 	 case 'AS':
-	 	header ("Location: http://as.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
+	 	header ("Location: http://as.download.webconverger.com" . $latest );
 	 	break;
 	case 'AF':
 	case 'EU':
-		header ("Location: http://eu.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
+		header ("Location: http://eu.download.webconverger.com" . $latest );
 		break;
 	case 'NA':
 	default:
-		header ("Location: http://na.download.webconverger.com" . $_SERVER['REQUEST_URI'] );
+		header ("Location: http://na.download.webconverger.com" . $latest );
 		break;
 }
 ?>
