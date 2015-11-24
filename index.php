@@ -1,6 +1,6 @@
 <?php
 
-$latest = "/webc-28.0.iso";
+$latest = "/webc-33.0.iso";
 
 
 	$geo = "";
